@@ -8,7 +8,7 @@ type R struct {
 	Data		interface{}	`json:"data"`
 }
 
-func CR() *R{
+func CR() *R {
 	return &R{
 		Code: 0,
 		Msg: "Succeed",
@@ -16,7 +16,7 @@ func CR() *R{
 	}
 }
 
-func (r *R) Succeed(data interface{}) *R{
+func (r *R) Succeed(data interface{}) *R {
 	r.Code = 0
 	r.Msg = "Succeed"
 	r.Data = data

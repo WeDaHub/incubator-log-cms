@@ -1,7 +1,7 @@
 package main
 
 import (
-	"api/code/irisapp"
+	"log-api/irisapp"
 )
 
 func main() {

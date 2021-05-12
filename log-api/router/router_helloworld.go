@@ -1,7 +1,7 @@
 package router
 
 import (
-	"api/code/controller"
+	"log-api/controller"
 )
 
 type Helloworld struct {

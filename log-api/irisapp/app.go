@@ -1,7 +1,7 @@
 package irisapp
 
 import (
-	"api/code/router"
+	"log-api/router"
 	"github.com/kataras/iris/v12"
 	"github.com/kataras/iris/v12/middleware/logger"
 	"github.com/kataras/iris/v12/middleware/recover"

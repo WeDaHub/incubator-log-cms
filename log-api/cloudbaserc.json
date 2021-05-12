@@ -1,0 +1,18 @@
+
+{
+  "envId": "{{env.ENV_ID}}",
+  "version": "1.0",
+  "framework": {
+    "name": "log-cms",
+    "plugins": {
+      "container": {
+        "use": "@cloudbase/framework-plugin-container",
+        "inputs": {
+          "serviceName": "log-cms",
+          "servicePath": "/log-cms",
+          "containerPort": 8848
+        }
+      }
+    }
+  }
+}

@@ -1,8 +1,5 @@
-CODEDIR="./code"
-BINDIR="./bin/"
-TARGETNAME="apiserv"
-
 
 build:
-    go build -o "bin/apiserv" "code/app"
+    go build -o "log-api" "./code/app"
+#
 
