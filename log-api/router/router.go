@@ -5,7 +5,7 @@ var (
 )
 
 type Router interface {
-	GetName() string
+	GetUir() string
 	GetController() interface{}
 }
 
@@ -14,7 +14,7 @@ func Routers() map[string]Router {
 }
 
 func register(router Router) {
-	routers[router.GetName()] = router
+	routers[router.GetUir()] = router
 }
 
 func unRegister(party string) {
@@ -23,5 +23,4 @@ func unRegister(party string) {
 
 func init(){
 	routers = make(map[string]Router)
-	register(NewHelloworld())
 }

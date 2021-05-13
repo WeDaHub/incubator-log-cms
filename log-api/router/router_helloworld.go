@@ -9,7 +9,7 @@ type Helloworld struct {
 	contorller interface{}
 }
 
-func (this *Helloworld) GetName() string {
+func (this *Helloworld) GetUir() string {
 	return this.name
 }
 

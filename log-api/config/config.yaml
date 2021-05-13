@@ -1,0 +1,11 @@
+server:
+  address: "0.0.0.0:8848"
+  prefix: "/api/"
+
+mysql:
+  user: "logcms"
+  password: "aA123!@#"
+  host: "tcp(118.24.10.209:3306)"
+  db: "logcms"
+  charset: "utf8mb4"
+

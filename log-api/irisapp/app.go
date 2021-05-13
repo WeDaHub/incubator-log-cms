@@ -1,6 +1,7 @@
 package irisapp
 
 import (
+	"log-api/config"
 	"log-api/router"
 	"github.com/kataras/iris/v12"
 	"github.com/kataras/iris/v12/middleware/logger"
@@ -20,9 +21,10 @@ func InitApp() {
 	}
 }
 
-func Start(host string, addr string) {
-	setup(host)
-	run(addr)
+func Start() {
+	cfg := config.SrvCfg()
+	setup(cfg.Prefix)
+	run(cfg.Address)
 }
 
 func setup(host string) {
