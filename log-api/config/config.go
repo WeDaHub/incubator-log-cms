@@ -18,11 +18,13 @@ type Server struct {
 
 
 type MySQL struct {
-	User 		string		`yaml:"user"`
-	Password	string		`yaml:"password"`
-	Host		string 		`yaml:"host"`
-	Database	string 		`yaml:"db"`
-	Charset		string 		`yaml:"charset"`
+	User 			string		`yaml:"user"`
+	Password		string		`yaml:"password"`
+	Host			string 		`yaml:"host"`
+	Database		string 		`yaml:"db"`
+	Charset			string 		`yaml:"charset"`
+	MaxIdleCount	int			`yaml:"maxidle"`
+	MaxConnCount	int			`yaml:"maxconn"`
 }
 
 var (

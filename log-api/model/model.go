@@ -4,24 +4,31 @@ import (
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"log-api/config"
+	"database/sql"
 )
 //需要自动迁移的表model添加到此处
 var models = []interface{}{
 	&User{},
 }
 //数据库访问对象，建议使用DB()获取
-var db *gorm.DB
+var gormDB *gorm.DB
 func DB() *gorm.DB {
-	return db
+	return gormDB
 }
 //初始化数据库
 func Init() (err error) {
 	dsn := config.MySQLCfg().GetDSN()
-	if db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{}); nil != err {
+	if gormDB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{}); nil != err {
 		return
 	}
-	if err = db.AutoMigrate(models...); nil != err {
+	if err = gormDB.AutoMigrate(models...); nil != err {
 		return
 	}
+	var db *sql.DB
+	if db, err = gormDB.DB(); nil != err {
+		return
+	}
+	db.SetMaxIdleConns(config.MySQLCfg().MaxIdleCount);
+	db.SetMaxOpenConns(config.MySQLCfg().MaxConnCount);
 	return nil
 }

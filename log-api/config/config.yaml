@@ -8,4 +8,6 @@ mysql:
   host: "tcp(118.24.10.209:3306)"
   db: "logcms"
   charset: "utf8mb4"
+  maxidle: 100
+  maxconn: 300
 
