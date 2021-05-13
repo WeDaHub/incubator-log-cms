@@ -21,7 +21,7 @@ func InitApp() {
 }
 
 func Start(host string, addr string) {
-	setup(host);
+	setup(host)
 	run(addr)
 }
 
