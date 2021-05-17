@@ -25,3 +25,7 @@ func (this*Helloworld) GetBy(id string, ctx iris.Context) (str string){
 	str = result.CR().Succeed(data).Json()
 	return
 }
+
+func (this *Helloworld) PostName(ctx iris.Context) {
+
+}

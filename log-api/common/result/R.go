@@ -34,3 +34,7 @@ func (r *R) Json() string {
 	by, _ := json.Marshal(r)
 	return string(by)
 }
+
+func (r *R) IsSucceed() bool {
+	return 0 == r.Code
+}

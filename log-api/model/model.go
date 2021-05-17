@@ -9,6 +9,7 @@ import (
 //需要自动迁移的表model添加到此处
 var models = []interface{}{
 	&User{},
+	&Rule{},
 }
 //数据库访问对象，建议使用DB()获取
 var gormDB *gorm.DB

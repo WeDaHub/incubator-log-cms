@@ -17,6 +17,10 @@ func (this *Helloworld) GetController() interface{} {
 	return this.contorller
 }
 
+func (this *Helloworld) GetNeedAuth() bool {
+	return false
+}
+
 func NewHelloworld() Router {
 	return &Helloworld{
 		name: "/hello",

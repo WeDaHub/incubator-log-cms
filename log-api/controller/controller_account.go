@@ -8,44 +8,33 @@ import (
 type Account struct {
 
 }
-// 注册账号
-// POST	/account/register
-func (this *Account) PostRegister(ctx iris.Context) string {
-	return result.CR().Succeed(nil).Json()
-}
-
-// 账号登录
-// POST /account/login
-func (this *Account) PostLogin(ctx iris.Context) string {
-	return result.CR().Succeed(nil).Json()
-}
 
 // 账号登出
-// POST /account/logout
+// POST /account/a/logout
 func (this *Account) PostLogout(ctx iris.Context) string {
 	return result.CR().Succeed(nil).Json()
 }
 
 // 修改密码
-// PUT /account/password
+// PUT /account/a/password
 func (this *Account) PutPassword(ctx iris.Context) string {
 	return result.CR().Succeed(nil).Json()
 }
 
 // 修改账号信息
-// PUT /account/detail
+// PUT /account/a/detail
 func (this *Account) PutDetail(ctx iris.Context) string {
 	return result.CR().Succeed(nil).Json()
 }
 
 // 获取账号信息
-// GET /account/detail
+// GET /account/a/detail
 func (this *Account) GetDetail(ctx iris.Context) string {
 	return result.CR().Succeed("GetDetail").Json()
 }
 
 // 拉取账号信息列表
-// GET /account/details
+// GET /account/a/details
 func (this *Account) GetDetails(ctx iris.Context) string {
 	return result.CR().Succeed("GetDetails").Json()
 }

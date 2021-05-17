@@ -7,6 +7,7 @@ var (
 type Router interface {
 	GetUir() string
 	GetController() interface{}
+	GetNeedAuth() bool
 }
 
 func Routers() map[string]Router {

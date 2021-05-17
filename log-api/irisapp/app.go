@@ -2,6 +2,7 @@ package irisapp
 
 import (
 	"log-api/config"
+	"log-api/middleware"
 	"log-api/router"
 	"github.com/kataras/iris/v12"
 	"github.com/kataras/iris/v12/middleware/logger"
@@ -18,6 +19,7 @@ func InitApp() {
 		app = iris.New()
 		app.Use(recover.New())
 		app.Use(logger.New())
+		app.Use()
 	}
 }
 
@@ -30,7 +32,13 @@ func Start() {
 func setup(host string) {
 	for key, value := range router.Routers() {
 		mvc.Configure(app.Party(host), func (mvcapp *mvc.Application){
-			mvcapp.Party(key).Handle(value.GetController())
+			if value.GetNeedAuth() {
+				//增加认证鉴权
+				mvcapp.Party(key, middleware.Auth).Handle(value.GetController())
+			} else {
+				//无需认证鉴权
+				mvcapp.Party(key).Handle(value.GetController())
+			}
 		})
 	}
 }
