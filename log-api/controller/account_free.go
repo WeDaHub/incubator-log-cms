@@ -13,7 +13,17 @@ type Accountf struct {
 // 注册账号
 // POST	/account/f/register
 func (this *Accountf) PostRegister(ctx iris.Context) string {
-	return result.CR().Succeed(nil).Json()
+	var data struct {
+		UserName string 	`json:"account"`
+		Password string 	`json:"password"`
+		Code	 string 	`json:"code"`
+	}
+	ctx.ReadJSON(data)
+	if len(data.UserName) == 0 || len(data.Password) == 0 || len(data.Code) == 0 {
+		return result.CR().Error(1).Json()
+	}
+	r := service.GetAccountService().AccountRegist(data.UserName, data.Password, data.Code)
+	return r.Json()
 }
 
 // 账号登录

@@ -17,6 +17,8 @@ type IAccount interface {
 	SendForgetPasswordSmsCode(mobile string) *result.R
 	//发送修改密码验证码
 	SendModifyPasswordSmsCode(mobile string) *result.R
+	//账号注册
+	AccountRegist(account string, password string, code string) *result.R
 }
 
 func GetAccountService() IAccount {
