@@ -5,23 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d70a0aac-b546-4983-be15-95a1996e3b99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/common/context/context.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/controller_account_free.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middleware/auth.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/rule.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/iaccount.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/log/log.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/sms/sms.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/content.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/content.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/account.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/result/R.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/result/R.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/controller_account.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controller_account.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/controller_helloworld.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controller_helloworld.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/irisapp/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/irisapp/app.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/controller_account.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/account.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/controller_account_free.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/account_free.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/controller_helloworld.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/helloworld.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/model.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/rule.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/rule.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/router/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/router/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/router/router_comm.go" beforeDir="false" afterPath="$PROJECT_DIR$/router/router_comm.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/router/router_helloworld.go" beforeDir="false" afterPath="$PROJECT_DIR$/router/router_helloworld.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/iaccount.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/iaccount.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

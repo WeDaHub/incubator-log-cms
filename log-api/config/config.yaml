@@ -11,3 +11,7 @@ mysql:
   maxidle: 100
   maxconn: 300
 
+log:
+  path: "./log/"
+  level: 3
+  size: 20 #单位M
