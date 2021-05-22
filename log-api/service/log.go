@@ -14,7 +14,7 @@ func (this *log) UpdateLog(ctx anc.Context, date string, log string) *result.R {
 	var logData model.Log
 	err := model.DB().First(&logData, "user_id = ? and date_time = ?", ctx.User.ID, date).Error
 	if logData.ID > 0 {
-		err = model.DB().Model(&model.Log{}).Where("user_id = ? and date_time = ?").Update("content", log).Error
+		err = model.DB().Model(&model.Log{}).Where("user_id = ? and date_time = ?", ctx.User.ID, date).Update("content", log).Error
 	} else {
 		logData.Content = log
 		logData.DateTime = date
@@ -57,6 +57,7 @@ func (this *log) GetLogList(ctx anc.Context, page int, size int) *result.R{
 	if err := model.DB().Where("user_id = ?", ctx.User.ID).Order("date_time desc").Limit(size).Offset((page - 1) * size).Find(&data.Data).Error; nil != err {
 		return result.CR().ERROR(err.Error())
 	}
-
+	data.Page = page
+	data.Size = size
 	return result.CR().Succeed(data)
 }

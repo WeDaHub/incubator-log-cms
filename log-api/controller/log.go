@@ -21,6 +21,7 @@ func (this *Log) PutBy(date string, ctx iris.Context) string {
 
 // GET /@uri/list/page/size
 func (this *Log) GetListBy(page int, size int, ctx iris.Context) string {
+	defer ctx.Next()
 	return service.GetLogService().GetLogList(anc.New(ctx), page, size).Json()
 }
 

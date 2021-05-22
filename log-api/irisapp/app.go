@@ -19,7 +19,7 @@ func InitApp() {
 		app = iris.New()
 		app.Use(recover.New())
 		app.Use(logger.New())
-		app.Use()
+		app.Done(middleware.UseAfter)
 	}
 }
 

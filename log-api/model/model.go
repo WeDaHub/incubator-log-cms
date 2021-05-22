@@ -34,3 +34,9 @@ func Init() (err error) {
 	db.SetMaxOpenConns(config.MySQLCfg().MaxConnCount);
 	return nil
 }
+
+func init() {
+	if err := Init(); nil != err {
+		panic(err)
+	}
+}
