@@ -30,6 +30,20 @@ func (r *R) Error(code int) *R {
 	return r
 }
 
+func (r *R) Error2(code int, msg string) *R{
+	r.Code = code
+	r.Msg = msg
+	r.Data = nil
+	return r
+}
+
+func (r*R) ERROR(msg string) *R{
+	r.Code = 1
+	r.Msg = msg
+	r.Data = nil
+	return r
+}
+
 func (r *R) Json() string {
 	by, _ := json.Marshal(r)
 	return string(by)

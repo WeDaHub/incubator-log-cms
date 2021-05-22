@@ -51,6 +51,9 @@ func registerAFRouter(uir string, a interface{}, f interface{}) {
 
 func init() {
 	//注册通用路由
-	register(newCommRouter("/hello", &controller.Helloworld{}, false))
+	register(newCommRouterF("/captcha", &controller.Captcha{}))
+	register(newCommRouterF("/admin", &controller.Admin{}))
+	register(newCommRouterA("/log", &controller.Log{}))
+	register(newCommRouterA("/rule", &controller.Rule{}))
 	registerAFRouter("/account", &controller.Account{}, &controller.Accountf{})
 }

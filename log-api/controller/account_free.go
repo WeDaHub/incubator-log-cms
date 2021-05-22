@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"fmt"
 	"github.com/kataras/iris/v12"
 	"log-api/common/result"
 	"log-api/service"
@@ -18,7 +19,7 @@ func (this *Accountf) PostRegister(ctx iris.Context) string {
 		Password string 	`json:"password"`
 		Code	 string 	`json:"code"`
 	}
-	ctx.ReadJSON(data)
+	ctx.ReadJSON(&data)
 	if len(data.UserName) == 0 || len(data.Password) == 0 || len(data.Code) == 0 {
 		return result.CR().Error(1).Json()
 	}
@@ -33,7 +34,8 @@ func (this *Accountf) PostLogin(ctx iris.Context) string {
 		UserName string 	`json:"account"`
 		Password string 	`json:"password"`
 	}
-	ctx.ReadJSON(data)
+	err := ctx.ReadJSON(&data)
+	fmt.Println(err)
 	if len(data.UserName) ==0 {
 		return result.CR().Error(1).Json()
 	}

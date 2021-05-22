@@ -10,7 +10,7 @@ import (
 var models = []interface{}{
 	&User{},
 	&Rule{},
-	&Content{},
+	&Log{},
 }
 //数据库访问对象，建议使用DB()获取
 var gormDB *gorm.DB

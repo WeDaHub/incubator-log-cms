@@ -20,8 +20,8 @@ require (
 	github.com/mattn/go-colorable v0.1.7 // indirect
 	github.com/mediocregopher/radix/v3 v3.5.2 // indirect
 	github.com/microcosm-cc/bluemonday v1.0.3 // indirect
+	github.com/mojocn/base64Captcha v1.3.4
 	github.com/moul/http2curl v1.0.0 // indirect
-	github.com/nats-io/jwt v0.3.2
 	github.com/nats-io/nats-server/v2 v2.1.8 // indirect
 	github.com/onsi/ginkgo v1.14.0 // indirect
 	github.com/sergi/go-diff v1.1.0 // indirect

@@ -2,7 +2,9 @@ package service
 
 import (
 	"log-api/common/result"
+	"log-api/middleware"
 	"log-api/model"
+	"time"
 )
 
 type account struct {
@@ -21,7 +23,18 @@ func (this *account) MobileLogin(mobile string, smsCode string) (*result.R, stri
 }
 //账号密码登录
 func (this *account) AccountLogin(account string, password string) (*result.R,string){
-	return result.CR(), ""
+	var user model.User
+	if err := model.DB().First(&user, "account = ?", account).Error; nil != err {
+		return result.CR().ERROR(err.Error()), ""
+	}
+	if user.ID == 0 {
+		return result.CR().ERROR("账号不存在"), ""
+	}
+	if token, err := middleware.GenerateToken(user, time.Hour); nil != err {
+		return result.CR().ERROR(err.Error()), ""
+	} else {
+		return result.CR().Succeed(nil), token
+	}
 }
 
 //账号登出
@@ -55,10 +68,4 @@ func (this *account)AccountRegist(account string, password string, code string) 
 	}
 
 	return result.CR().Succeed(nil)
-}
-
-var act *account
-
-func init() {
-	act = &account{}
 }

@@ -12,4 +12,5 @@ type User struct {
 	Name 		string 	`gorm:"type:varchar(64);not null;comment:'用户姓名'"`
 	Password	string 	`gorm:"type:varchar(64);not null;comment:'登录密码'"`
 	RuleId		uint	`gorm:"type:uint;not null;comment:'用户角色权限ID，权限表主键'"`
+	Creator		uint 	`gorm:"type:uint;not null;comment:'创建者ID'"`
 }

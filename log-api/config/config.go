@@ -42,7 +42,7 @@ func MySQLCfg() (mysql *MySQL) {
 }
 
 func (this *MySQL) GetDSN() (dsn string) {
-	dsn = fmt.Sprintf("%s:%s@%s/%s?charset=%s", this.User, this.Password, this.Host, this.Database, this.Charset)
+	dsn = fmt.Sprintf("%s:%s@%s/%s?charset=%s&parseTime=true", this.User, this.Password, this.Host, this.Database, this.Charset)
 	return
 }
 

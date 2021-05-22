@@ -3,7 +3,6 @@ package middleware
 import (
 	"fmt"
 	"github.com/kataras/iris/v12"
-	"github.com/nats-io/jwt"
 	"net/http"
 )
 
@@ -23,10 +22,8 @@ func Auth(ctx iris.Context) {
 func jwtAuth(ctx iris.Context) bool {
 	token := ctx.GetHeader("Authorization")
 
-	var claims jwt.AccountClaims
-	if err := jwt.Decode(token, &claims); nil != err {
+	if _, err := VerifyToken(token); nil != err {
 		return false
 	}
-
 	return true
 }

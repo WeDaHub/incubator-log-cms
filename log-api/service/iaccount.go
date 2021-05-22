@@ -22,5 +22,5 @@ type IAccount interface {
 }
 
 func GetAccountService() IAccount {
-	return act
+	return &account{}
 }
