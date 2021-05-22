@@ -30,6 +30,11 @@ func (this *account) AccountLogin(account string, password string) (*result.R,st
 	if user.ID == 0 {
 		return result.CR().ERROR("账号不存在"), ""
 	}
+	if (user.Password != password){
+		return result.CR().ERROR("账号或密码错误"), ""
+	}
+	//清空密码再生成token，防止token被破解
+	user.Password = ""
 	if token, err := middleware.GenerateToken(user, time.Hour); nil != err {
 		return result.CR().ERROR(err.Error()), ""
 	} else {
