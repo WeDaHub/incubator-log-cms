@@ -5,33 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d70a0aac-b546-4983-be15-95a1996e3b99" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/common/anc/context.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/admin.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/captcha.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/rule.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middleware/jwt.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/captcha.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/icaptcha.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/ilog.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/irule.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/log.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/rule.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/context/context.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/result/R.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/result/R.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/account_free.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/account_free.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/content.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/log.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/auth.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/content.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/log.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/model.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/rule.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/rule.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/router/router_comm.go" beforeDir="false" afterPath="$PROJECT_DIR$/router/router_comm.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/account.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/account.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/iaccount.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/iaccount.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,11 +212,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="734" y="367" key="com.goide.refactor.move.GoMoveDeclarationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1621684395669" />
-    <state x="1038" y="328" width="672" height="678" key="search.everywhere.popup" timestamp="1621178468540">
+    <state x="1038" y="328" width="672" height="678" key="search.everywhere.popup" timestamp="1621685255339">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1038" y="328" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1620890865449" />
-    <state x="1038" y="328" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1621178468540" />
+    <state x="1038" y="328" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1621685255339" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -257,7 +233,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/controller/account_free.go</url>
-          <line>36</line>
+          <line>40</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">

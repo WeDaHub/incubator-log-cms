@@ -17,7 +17,9 @@ func (this *Accountf) PostRegister(ctx iris.Context) string {
 	var data struct {
 		UserName string 	`json:"account"`
 		Password string 	`json:"password"`
+		Mobile 	 string 	`json:"mobile"`
 		Code	 string 	`json:"code"`
+		CodeId	 string		`json:"key"`
 	}
 	ctx.ReadJSON(&data)
 	if len(data.UserName) == 0 || len(data.Password) == 0 || len(data.Code) == 0 {
@@ -33,6 +35,8 @@ func (this *Accountf) PostLogin(ctx iris.Context) string {
 	var data struct {
 		UserName string 	`json:"account"`
 		Password string 	`json:"password"`
+		Code	 string 	`json:"code"`
+		CodeId	 string		`json:"key"`
 	}
 	err := ctx.ReadJSON(&data)
 	fmt.Println(err)
