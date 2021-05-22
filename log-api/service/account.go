@@ -1,6 +1,9 @@
 package service
 
-import "log-api/common/result"
+import (
+	"log-api/common/result"
+	"log-api/model"
+)
 
 type account struct {
 
@@ -32,6 +35,26 @@ func (this *account) SendForgetPasswordSmsCode(mobile string) *result.R{
 //发送修改密码验证码
 func (this *account) SendModifyPasswordSmsCode(mobile string) *result.R{
 	return result.CR()
+}
+
+//账号注册
+func (this *account)AccountRegist(account string, password string, code string) *result.R{
+	var user model.User
+	if err := model.DB().First(&user, "account = ?", account).Error; nil != err {
+
+		user.Account = account
+		user.Password = password
+
+		err = model.DB().Create(&user).Error
+		if err != nil {
+			return result.CR().Error(1)
+		}
+
+	} else {
+		return  result.CR().Error(1)
+	}
+
+	return result.CR().Succeed(nil)
 }
 
 var act *account
