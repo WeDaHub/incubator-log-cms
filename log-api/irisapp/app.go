@@ -1,13 +1,11 @@
 package irisapp
 
 import (
+	"github.com/kataras/iris/v12"
+	"github.com/kataras/iris/v12/mvc"
 	"log-api/config"
 	"log-api/middleware"
 	"log-api/router"
-	"github.com/kataras/iris/v12"
-	"github.com/kataras/iris/v12/middleware/logger"
-	"github.com/kataras/iris/v12/middleware/recover"
-	"github.com/kataras/iris/v12/mvc"
 )
 
 var (
@@ -17,8 +15,7 @@ var (
 func InitApp() {
 	if nil == app {
 		app = iris.New()
-		app.Use(recover.New())
-		app.Use(logger.New())
+		app.Use(middleware.Cors)
 		app.Done(middleware.UseAfter)
 	}
 }
