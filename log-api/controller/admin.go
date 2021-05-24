@@ -10,5 +10,5 @@ type Admin struct {
 }
 
 func (this *Admin) Post(ctx iris.Context){
-	service.GetAccountService().AccountRegist("leo", "123456", "123")
+	service.GetAccountService().AccountRegist("leo", "123456", "123", "111111", "222222")
 }

@@ -64,7 +64,7 @@ func (this *Accountf) PostLogin(ctx iris.Context) string {
 	if len(data.CodeId) ==0 {
 		return result.CR().Error(1).Json()
 	}
-	r,token := service.GetAccountService().AccountLogin(data.UserName, data.Password, data.code, data.CodeId)
+	r,token := service.GetAccountService().AccountLogin(data.UserName, data.Password, data.Code, data.CodeId)
 	if r.IsSucceed() {
 		ctx.Header("Authorization",token)
 	}
