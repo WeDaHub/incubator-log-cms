@@ -10,7 +10,7 @@ type IAccount interface {
 	//手机验证码登录
 	MobileLogin(mobile string, smsCode string) (*result.R,string)
 	//账号密码登录
-	AccountLogin(account string, password string) (*result.R, string)
+	AccountLogin(account string, password string, code string, codeId string) (*result.R, string)
 	//账号登出
 	Logout(userId uint) *result.R
 	//发送找回密码验证码

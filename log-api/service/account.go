@@ -23,7 +23,12 @@ func (this *account) MobileLogin(mobile string, smsCode string) (*result.R, stri
 	return result.CR(), ""
 }
 //账号密码登录
-func (this *account) AccountLogin(account string, password string) (*result.R,string){
+func (this *account) AccountLogin(account string, password string, code string, codeId string) (*result.R,string){
+	//code和codeId验证
+	if !GetCaptchaService().Verify(codeId, code).IsSucceed() {
+		return result.CR().ERROR("code verify error!!!"), ""
+	}
+
 	var user model.User
 	if err := model.DB().First(&user, "account = ?", account).Error; nil != err {
 		return result.CR().ERROR(err.Error()), ""
@@ -58,23 +63,25 @@ func (this *account) SendModifyPasswordSmsCode(mobile string) *result.R{
 
 //账号注册
 func (this *account)AccountRegist(account string, password string, mobile string, code string, codeId string) *result.R{
+
+	//code和codeId验证
+	if !GetCaptchaService().Verify(codeId, code).IsSucceed() {
+		return result.CR().ERROR("code verify error!!!")
+	}
+	//注册
 	var user model.User
 	if err := model.DB().First(&user, "account = ?", account).Error; nil != err {
-
-		//TODO - code和codeId验证
 
 		user.Account = account
 		user.Password = crypto.GetMd5(password + account)
 		user.Mobile = mobile
 
-
 		err = model.DB().Create(&user).Error
 		if err != nil {
-			return result.CR().Error(1)
+			return result.CR().ERROR("db create error!!!")
 		}
-
 	} else {
-		return  result.CR().Error(1)
+		return  result.CR().ERROR("db find user, can not regist!!!")
 	}
 
 	return result.CR().Succeed(nil)
