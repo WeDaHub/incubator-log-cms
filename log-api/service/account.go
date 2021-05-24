@@ -1,6 +1,7 @@
 package service
 
 import (
+	"log-api/common/crypto"
 	"log-api/common/result"
 	"log-api/middleware"
 	"log-api/model"
@@ -30,7 +31,7 @@ func (this *account) AccountLogin(account string, password string) (*result.R,st
 	if user.ID == 0 {
 		return result.CR().ERROR("账号不存在"), ""
 	}
-	if (user.Password != password){
+	if (user.Password != crypto.GetMd5(password + account)){
 		return result.CR().ERROR("账号或密码错误"), ""
 	}
 	//清空密码再生成token，防止token被破解
@@ -56,12 +57,16 @@ func (this *account) SendModifyPasswordSmsCode(mobile string) *result.R{
 }
 
 //账号注册
-func (this *account)AccountRegist(account string, password string, code string) *result.R{
+func (this *account)AccountRegist(account string, password string, mobile string, code string, codeId string) *result.R{
 	var user model.User
 	if err := model.DB().First(&user, "account = ?", account).Error; nil != err {
 
+		//TODO - code和codeId验证
+
 		user.Account = account
-		user.Password = password
+		user.Password = crypto.GetMd5(password + account)
+		user.Mobile = mobile
+
 
 		err = model.DB().Create(&user).Error
 		if err != nil {

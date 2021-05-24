@@ -22,10 +22,10 @@ func (this *Accountf) PostRegister(ctx iris.Context) string {
 		CodeId	 string		`json:"key"`
 	}
 	ctx.ReadJSON(&data)
-	if len(data.UserName) == 0 || len(data.Password) == 0 || len(data.Code) == 0 {
+	if len(data.UserName) == 0 || len(data.Password) == 0 || len(data.Mobile) == 0 || len(data.Code) == 0 || len(data.CodeId) == 0{
 		return result.CR().Error(1).Json()
 	}
-	r := service.GetAccountService().AccountRegist(data.UserName, data.Password, data.Code)
+	r := service.GetAccountService().AccountRegist(data.UserName, data.Password, data.Mobile, data.Code, data.CodeId)
 	return r.Json()
 }
 
