@@ -22,7 +22,19 @@ func (this *Accountf) PostRegister(ctx iris.Context) string {
 		CodeId	 string		`json:"key"`
 	}
 	ctx.ReadJSON(&data)
-	if len(data.UserName) == 0 || len(data.Password) == 0 || len(data.Mobile) == 0 || len(data.Code) == 0 || len(data.CodeId) == 0{
+	if len(data.UserName) ==0 {
+		return result.CR().Error(1).Json()
+	}
+	if len(data.Password) ==0 {
+		return result.CR().Error(1).Json()
+	}
+	if len(data.Mobile) ==0 {
+		return result.CR().Error(1).Json()
+	}
+	if len(data.Code) ==0 {
+		return result.CR().Error(1).Json()
+	}
+	if len(data.CodeId) ==0 {
 		return result.CR().Error(1).Json()
 	}
 	r := service.GetAccountService().AccountRegist(data.UserName, data.Password, data.Mobile, data.Code, data.CodeId)
@@ -46,7 +58,13 @@ func (this *Accountf) PostLogin(ctx iris.Context) string {
 	if len(data.Password) ==0 {
 		return result.CR().Error(1).Json()
 	}
-	r,token := service.GetAccountService().AccountLogin(data.UserName, data.Password)
+	if len(data.Code) ==0 {
+		return result.CR().Error(1).Json()
+	}
+	if len(data.CodeId) ==0 {
+		return result.CR().Error(1).Json()
+	}
+	r,token := service.GetAccountService().AccountLogin(data.UserName, data.Password, data.code, data.CodeId)
 	if r.IsSucceed() {
 		ctx.Header("Authorization",token)
 	}
