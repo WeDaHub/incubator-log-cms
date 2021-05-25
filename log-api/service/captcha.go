@@ -18,8 +18,8 @@ func newDriver() *base64Captcha.DriverString {
 	driver.Height = 44
 	driver.Width = 120
 	driver.NoiseCount = 5
-	driver.ShowLineOptions = base64Captcha.OptionShowSineLine | base64Captcha.OptionShowSlimeLine | base64Captcha.OptionShowHollowLine
-	driver.Length = 6
+	//driver.ShowLineOptions = base64Captcha.OptionShowSineLine | base64Captcha.OptionShowSlimeLine | base64Captcha.OptionShowHollowLine
+	driver.Length = 4
 	driver.Source = "1234567890qwertyuipkjhgfdsazxcvbnm"
 	//driver.Fonts = []string{"wqy-microhei.ttc"}
 	return driver
