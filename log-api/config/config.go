@@ -49,5 +49,21 @@ func (this *MySQL) GetDSN() (dsn string) {
 func init() {
 	if file, err := os.Open("./config/config.yaml"); nil == err{
 		yaml.NewDecoder(file).Decode(&cfg)
+	} else {
+		cfg = Cfg{
+			MySQL:MySQL{
+				User:"logcms",
+				Password: "aA123!@#",
+				Host:"tcp(118.24.10.209:3306)",
+				Database: "logcms",
+				Charset: "utf8mb4",
+				MaxIdleCount: 100,
+				MaxConnCount: 300,
+			},
+			Server: Server{
+				Address: "0.0.0.0:8848",
+				Prefix:"/api/",
+			},
+		}
 	}
 }
