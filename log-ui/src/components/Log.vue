@@ -1,30 +1,5 @@
 <template>
-  <div id="logDiv" style="width:480px">
-    <!--
-    <div style="height:80px;"></div>
-    <textarea
-      v-model="logdata"
-      style="border:0;border-radius:5px;background-color:rgba(241,241,241,.98);width: 480px;height: 320px;padding: 10px;resize: none;"
-      placeholder="请输入日志"
-    ></textarea>
-
-    <button
-      id="btnSub"
-      v-on:click="onWriteLog()"
-      style="margin: 15px 0 0 10px;height:41px;width:10%; background-color: #2D456B"
-      data-loading="打开注册页面，请稍后..."
-    >
-      提交
-    </button>
-
-    <button
-      id="btnSave"
-      v-on:click="onSaveLog()"
-      style="margin: 15px 0 0 10px;height:41px;width:10%;background-color: rgb(211, 165, 165)"
-      data-loading="正在验证登录，请稍后..."
-    >
-      保存为草稿
-    </button>-->
+  <div id="logDiv" style="width: 480px">
     <el-form ref="form" label-width="80px">
       <el-form-item label="时间">
         <el-input :value="curDate" :disabled="true"> </el-input>
@@ -34,7 +9,7 @@
         <el-input type="textarea" id="loginput" v-model="logdata"></el-input>
       </el-form-item>
     </el-form>
-    <el-button type="primary" v-on:click="onWriteLog()" style=" width: 20%"
+    <el-button type="primary" v-on:click="onWriteLog()" style="width: 20%"
       >提交</el-button
     >
   </div>
@@ -48,7 +23,7 @@ export default {
     return {
       logdata: null,
       curDate: "20210525",
-      curLogDate: ""
+      curLogDate: "",
     };
   },
   mounted() {
@@ -56,7 +31,7 @@ export default {
     const date = {
       year: nowDate.getFullYear(),
       month: nowDate.getMonth() + 1,
-      date: nowDate.getDate()
+      date: nowDate.getDate(),
     };
     const newmonth = date.month > 10 ? date.month : "0" + date.month;
     const day = date.date > 10 ? date.date : "0" + date.date;
@@ -70,19 +45,19 @@ export default {
       var sessionKey = window.sessionStorage.getItem("authKey");
       console.log(sessionKey);
       var bodyData = {
-        content: this.logdata
+        content: this.logdata,
       };
       var ReqData = {
         params: JSON.stringify(bodyData),
-        headers: { authorization: sessionKey }
+        headers: { authorization: sessionKey },
       };
       console.log(ReqData);
 
       this.$axios
         .put("/api/log/a/" + this.curLogDate, JSON.stringify(bodyData), {
-          headers: { authorization: sessionKey }
+          headers: { authorization: sessionKey },
         })
-        .then(response => {
+        .then((response) => {
           var rspData = response.data;
           console.log(rspData);
           if (rspData.code === 0) {
@@ -91,18 +66,18 @@ export default {
             //console.log(this.imageCode);
             this.$message({
               message: "日志写入成功",
-              type: "success"
+              type: "success",
             });
           }
         })
-        .catch(error => {
+        .catch((error) => {
           console.log(error);
         });
     },
     onSaveLog() {
       alert("scanWeekLogs");
-    }
-  }
+    },
+  },
 };
 </script>
 
