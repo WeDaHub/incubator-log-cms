@@ -10,7 +10,7 @@
             "vue": {
                 "use": "@cloudbase/framework-plugin-website",
                 "inputs": {
-                    "buildCommand": "npm run dev",
+                    "buildCommand": "npm run build",
                     "outputPath": "dist"
                 }
             }
