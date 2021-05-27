@@ -4,7 +4,6 @@ import Vue from "vue";
 import App from "./App";
 import router from "./router";
 import axios from "axios";
-import TipWindow from "@/components/TipWindow";
 import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 
@@ -13,7 +12,6 @@ Vue.use(ElementUI);
 Vue.config.productionTip = false;
 
 Vue.prototype.$axios = axios; //设置全局引用
-Vue.prototype.$tip = TipWindow; //设置全局引用
 
 //配置请求的设置
 axios.defaults.headers.post["Content-type"] = "application/json";
