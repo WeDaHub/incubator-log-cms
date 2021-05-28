@@ -65,9 +65,9 @@ func (this *account) SendModifyPasswordSmsCode(mobile string) *result.R{
 func (this *account)AccountRegist(account string, password string, mobile string, code string, codeId string) *result.R{
 
 	//code和codeId验证
-	if !GetCaptchaService().Verify(codeId, code).IsSucceed() {
-		return result.CR().ERROR("code verify error!!!")
-	}
+	//if !GetCaptchaService().Verify(codeId, code).IsSucceed() {
+	//	return result.CR().ERROR("code verify error!!!")
+	//}
 	//注册
 	var user model.User
 	if err := model.DB().First(&user, "account = ?", account).Error; nil != err {
